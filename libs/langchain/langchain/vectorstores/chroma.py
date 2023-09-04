@@ -79,10 +79,9 @@ class Chroma(VectorStore):
         try:
             import chromadb
             import chromadb.config
-        except ImportError:
+        except ImportError as e:
             raise ImportError(
-                "Could not import chromadb python package. "
-                "Please install it with `pip install chromadb`."
+                e
             )
 
         if client is not None:
